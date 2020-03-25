@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
 import logoImage from "../../assets/logo.svg";
+import "./styles.css";
 
 const Register = () => {
   return (
@@ -17,9 +18,9 @@ const Register = () => {
             encontrarem os casos da sua ONG.
           </p>
 
-          <Link to="/register">
+          <Link to="/" className="back-link">
             <FiArrowLeft size="16" color="#e02041" />
-            Não tenho cadastro
+            Voltar para o logon
           </Link>
         </section>
 
