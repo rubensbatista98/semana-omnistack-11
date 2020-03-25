@@ -5,7 +5,7 @@
   margin: 0 auto;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -19,28 +19,7 @@
   margin-top: 100px;
 }
 
-form > h1 {
+.logon-container > .form-section > form > h1 {
   font-size: 32px;
   margin-bottom: 32px;
-}
-
-form > a {
-  display: flex;
-  align-items: center;
-
-  font-size: 18px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #41414d;
-
-  margin-top: 40px;
-  transition: opacity 200ms;
-}
-
-form > a svg {
-  margin-right: 8px;
-}
-
-form > a:hover {
-  opacity: 0.8;
 }
