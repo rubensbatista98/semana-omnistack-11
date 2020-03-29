@@ -24,6 +24,7 @@
 .register-container > .content > .section-info {
   width: 100%;
   max-width: 380px;
+  margin-right: 40px;
 }
 
 .register-container > .content > .section-info > h1 {
@@ -50,6 +51,50 @@
   display: flex;
 }
 
+.register-container > .content > form > .input-group > input:first-child {
+  min-width: 200px;
+}
+
 .register-container > .content > form > .input-group > input + input {
   margin-left: 8px;
+}
+
+@media (max-width: 1120px) {
+  .register-container > .content {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .register-container > .content {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 760px) {
+  .register-container {
+    height: auto;
+  }
+
+  .register-container > .content {
+    flex-direction: column;
+    padding: 50px 10px;
+  }
+
+  .register-container > .content > .section-info {
+    margin: 0;
+  }
+
+  .register-container > .content > .section-info > h1 {
+    margin: 40px 0 20px;
+  }
+
+  .register-container > .content > .section-info > .back-link {
+    justify-content: right;
+    margin-top: 20px;
+  }
+
+  .register-container > .content > form {
+    margin-top: 20px;
+  }
 }
