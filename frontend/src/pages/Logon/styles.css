@@ -1,5 +1,5 @@
 .logon-container {
-  width: 100%;
+  width: 95%;
   max-width: 1120px;
   height: 100vh;
   margin: 0 auto;
@@ -22,4 +22,17 @@
 .logon-container > .form-section > form > h1 {
   font-size: 32px;
   margin-bottom: 32px;
+}
+
+@media (max-width: 600px) {
+  .logon-container {
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 40px;
+  }
+
+  .logon-container > img {
+    display: none;
+  }
 }
