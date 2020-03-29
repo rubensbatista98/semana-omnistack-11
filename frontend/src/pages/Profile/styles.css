@@ -1,5 +1,5 @@
 .profile-container {
-  width: 100%;
+  width: 95%;
   max-width: 1180px;
   margin: 32px auto;
 }
@@ -7,24 +7,30 @@
 .profile-container > .profile-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.profile-container > .profile-header > img {
+.profile-container > .profile-header > .column {
+  display: flex;
+  align-items: center;
+}
+
+.profile-container > .profile-header > .column img {
   height: 64px;
 }
 
-.profile-container > .profile-header > span {
+.profile-container > .profile-header > .column span {
   font-size: 20px;
   margin-left: 24px;
 }
 
-.profile-container > .profile-header > a {
+.profile-container > .profile-header > .column a {
   width: 260px;
   margin-top: 0;
   margin-left: auto;
 }
 
-.profile-container > .profile-header > button {
+.profile-container > .profile-header > .column button {
   width: 60px;
   height: 60px;
   background-color: transparent;
@@ -35,7 +41,7 @@
   transition: border-color 200ms;
 }
 
-.profile-container > .profile-header > button:hover {
+.profile-container > .profile-header > .column button:hover {
   border-color: #999;
 }
 
@@ -84,4 +90,57 @@
   font-size: 16px;
   line-height: 21px;
   color: #737380;
+}
+
+@media (max-width: 900px) {
+  .profile-container > .profile-header > .column a {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+
+  .profile-container > .profile-header > .column button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  .profile-container > .profile-header {
+    padding: 0 30px;
+    flex-direction: column-reverse;
+  }
+
+  .profile-container > .profile-header > .column {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-container > .profile-header > .column + .column {
+    margin-bottom: 20px;
+  }
+
+  .profile-container > .profile-header > .column a {
+    order: 3;
+    margin: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .profile-container > ul {
+    grid-template-columns: minmax(300px, 500px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-container > .profile-header {
+    padding: 0 10px;
+  }
+
+  .profile-container > .profile-header > .column img {
+    width: 100px;
+    height: 60px;
+  }
 }

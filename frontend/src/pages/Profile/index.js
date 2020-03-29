@@ -54,16 +54,20 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <header className="profile-header">
-        <img src={logoImage} alt="Be The Hero" />
-        <span>Bem vinda, {ongName}</span>
+        <div className="column">
+          <img src={logoImage} alt="Be The Hero" />
+          <span>Bem vinda, {ongName}</span>
+        </div>
 
-        <Link className="button" to="/incidents/new">
-          Cadastrar novo caso
-        </Link>
+        <div className="column">
+          <Link className="button" to="/incidents/new">
+            Cadastrar novo caso
+          </Link>
 
-        <button type="button" onClick={handleLogout}>
-          <FiPower size="18" color="#e02041" />
-        </button>
+          <button type="button" onClick={handleLogout}>
+            <FiPower size="18" color="#e02041" />
+          </button>
+        </div>
       </header>
 
       <h1>Casos cadastrados</h1>
