@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
 
@@ -15,27 +15,30 @@ const Profile = () => {
   const ongId = localStorage.getItem("ongId");
   const ongName = localStorage.getItem("ongName");
 
-  async function handleDeleteIncident(id) {
-    try {
-      await api.delete(`incidents/${id}`, {
-        headers: {
-          Authorization: ongId
-        }
-      });
+  const handleDeleteIncident = useCallback(
+    async id => {
+      try {
+        await api.delete(`incidents/${id}`, {
+          headers: {
+            Authorization: ongId
+          }
+        });
 
-      const newIncidents = incidents.filter(incident => incident.id !== id);
+        const newIncidents = incidents.filter(incident => incident.id !== id);
 
-      setIncidents(newIncidents);
-    } catch (error) {
-      alert("Erro ao deletar caso, tente novamente.");
-    }
-  }
+        setIncidents(newIncidents);
+      } catch (error) {
+        alert("Erro ao deletar caso, tente novamente.");
+      }
+    },
+    [incidents, ongId]
+  );
 
-  function handleLogout() {
+  const handleLogout = useCallback(() => {
     localStorage.clear();
 
     history.push("/");
-  }
+  }, [history]);
 
   useEffect(() => {
     async function loadIncidents() {
@@ -102,4 +105,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default React.memo(Profile);

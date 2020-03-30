@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 
@@ -17,20 +17,23 @@ const Logon = () => {
 
   const history = useHistory();
 
-  async function handleLogin(event) {
-    event.preventDefault();
+  const handleLogin = useCallback(
+    async event => {
+      event.preventDefault();
 
-    try {
-      const response = await api.post("sessions", { id });
+      try {
+        const response = await api.post("sessions", { id });
 
-      localStorage.setItem("ongId", id);
-      localStorage.setItem("ongName", response.data.name);
+        localStorage.setItem("ongId", id);
+        localStorage.setItem("ongName", response.data.name);
 
-      history.push("/profile");
-    } catch (error) {
-      alert("Falha no login, tente novamente.");
-    }
-  }
+        history.push("/profile");
+      } catch (error) {
+        alert("Falha no login, tente novamente.");
+      }
+    },
+    [id, history]
+  );
 
   return (
     <PageContainer className="-logon">
@@ -64,4 +67,4 @@ const Logon = () => {
   );
 };
 
-export default Logon;
+export default React.memo(Logon);

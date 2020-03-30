@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
@@ -21,26 +21,30 @@ const Register = () => {
 
   const history = useHistory();
 
-  async function handleRegister(event) {
-    event.preventDefault();
+  const handleRegister = useCallback(
+    async event => {
+      event.preventDefault();
 
-    const data = {
-      name,
-      email,
-      whatsapp,
-      city,
-      uf
-    };
-    try {
-      const response = await api.post("ongs", data);
+      const data = {
+        name,
+        email,
+        whatsapp,
+        city,
+        uf
+      };
 
-      alert(`Seu ID de acesso: ${response.data.id}`);
+      try {
+        const response = await api.post("ongs", data);
 
-      history.push("/");
-    } catch (error) {
-      alert("Erro no cadastro, tente novamente.");
-    }
-  }
+        alert(`Seu ID de acesso: ${response.data.id}`);
+
+        history.push("/");
+      } catch (error) {
+        alert("Erro no cadastro, tente novamente.");
+      }
+    },
+    [history, name, email, whatsapp, city, uf]
+  );
 
   return (
     <PageContainer className="-register">
@@ -108,4 +112,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default React.memo(Register);

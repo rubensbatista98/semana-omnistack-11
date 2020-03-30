@@ -6,4 +6,4 @@ const SectionInfo = ({ children }) => (
   <section className="section-info">{children}</section>
 );
 
-export default SectionInfo;
+export default React.memo(SectionInfo);

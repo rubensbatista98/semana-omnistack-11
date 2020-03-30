@@ -9,4 +9,4 @@ const ActionLink = ({ to, children }) => (
   </Link>
 );
 
-export default ActionLink;
+export default React.memo(ActionLink);

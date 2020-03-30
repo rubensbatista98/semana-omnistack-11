@@ -6,4 +6,4 @@ const ContentContainer = ({ children }) => (
   <div className="content-container">{children}</div>
 );
 
-export default ContentContainer;
+export default React.memo(ContentContainer);

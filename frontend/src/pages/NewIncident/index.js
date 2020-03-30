@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
@@ -21,25 +21,28 @@ const NewIncident = () => {
 
   const ongId = localStorage.getItem("ongId");
 
-  async function handleNewIncident(event) {
-    event.preventDefault();
+  const handleNewIncident = useCallback(
+    async event => {
+      event.preventDefault();
 
-    const data = {
-      title,
-      description,
-      value
-    };
+      const data = {
+        title,
+        description,
+        value
+      };
 
-    try {
-      await api.post("incidents", data, {
-        headers: { Authorization: ongId }
-      });
+      try {
+        await api.post("incidents", data, {
+          headers: { Authorization: ongId }
+        });
 
-      history.push("/profile");
-    } catch (error) {
-      alert("Erro ao cadastrar caso, tente novamente.");
-    }
-  }
+        history.push("/profile");
+      } catch (error) {
+        alert("Erro ao cadastrar caso, tente novamente.");
+      }
+    },
+    [history, ongId, title, description, value]
+  );
 
   return (
     <PageContainer className="-incident">
@@ -91,4 +94,4 @@ const NewIncident = () => {
   );
 };
 
-export default NewIncident;
+export default React.memo(NewIncident);

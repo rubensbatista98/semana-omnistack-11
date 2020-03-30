@@ -6,4 +6,4 @@ const PageContainer = ({ className, children }) => (
   <div className={`page-container ${className}`}>{children}</div>
 );
 
-export default PageContainer;
+export default React.memo(PageContainer);
