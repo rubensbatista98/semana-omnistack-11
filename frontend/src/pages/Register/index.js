@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
+
+import PageContainer from "../../components/PageContainer";
+import ContentContainer from "../../components/ContentContainer";
+import SectionInfo from "../../components/SectionInfo";
+import ActionLink from "../../components/ActionLink";
 
 import api from "../../services/api";
 
@@ -38,22 +43,23 @@ const Register = () => {
   }
 
   return (
-    <div className="register-container">
-      <div className="content">
-        <section className="section-info">
+    <PageContainer className="-register">
+      <ContentContainer>
+        <SectionInfo>
           <img src={logoImage} alt="Be The Hero" />
 
           <h1>Cadastro</h1>
+
           <p>
             Faça seu cadastro, entre na plataforma e ajude as pessoas a
             encontrarem os casos da sua ONG.
           </p>
 
-          <Link to="/" className="back-link">
+          <ActionLink to="/">
             <FiArrowLeft size="16" color="#e02041" />
             Voltar para o logon
-          </Link>
-        </section>
+          </ActionLink>
+        </SectionInfo>
 
         <form onSubmit={handleRegister}>
           <input
@@ -97,8 +103,8 @@ const Register = () => {
             Cadastrar
           </button>
         </form>
-      </div>
-    </div>
+      </ContentContainer>
+    </PageContainer>
   );
 };
 

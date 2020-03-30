@@ -1,0 +1,10 @@
+.section-info > h1 {
+  font-size: 32px;
+  margin: 64px 0 32px;
+}
+
+.section-info > p {
+  font-size: 18px;
+  line-height: 32px;
+  color: #737380;
+}

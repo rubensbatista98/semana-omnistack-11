@@ -1,100 +1,39 @@
-.register-container {
-  width: 100%;
-  max-width: 1120px;
-  height: 100vh;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.register-container > .content {
-  width: 100%;
-  background-color: #f0f0f5;
-  border-radius: 8px;
-  padding: 96px;
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.register-container > .content > .section-info {
-  width: 100%;
-  max-width: 380px;
-  margin-right: 40px;
-}
-
-.register-container > .content > .section-info > h1 {
-  font-size: 32px;
-  margin: 64px 0 32px;
-}
-
-.register-container > .content > .section-info > p {
-  font-size: 18px;
-  line-height: 32px;
-  color: #737380;
-}
-
-.register-container > .content > form {
+.-register > .content-container > form {
   width: 100%;
   max-width: 450px;
 }
 
-.register-container > .content > form input {
+.-register > .content-container > form input {
   margin-top: 8px;
 }
 
-.register-container > .content > form > .input-group {
+.-register > .content-container > form > .input-group {
   display: flex;
 }
 
-.register-container > .content > form > .input-group > input:first-child {
+.-register > .content-container > form > .input-group > input:first-child {
   min-width: 200px;
 }
 
-.register-container > .content > form > .input-group > input + input {
+.-register > .content-container > form > .input-group > input + input {
   margin-left: 8px;
 }
 
 @media (max-width: 1120px) {
-  .register-container > .content {
-    height: 100%;
+  .-register > .content-container {
+    min-height: 100vh;
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 1000px) {
-  .register-container > .content {
+  .-register > .content-container {
     padding: 50px;
   }
 }
 
 @media (max-width: 760px) {
-  .register-container {
+  .page-container.-register {
     height: auto;
-  }
-
-  .register-container > .content {
-    flex-direction: column;
-    padding: 50px 10px;
-  }
-
-  .register-container > .content > .section-info {
-    margin: 0;
-  }
-
-  .register-container > .content > .section-info > h1 {
-    margin: 40px 0 20px;
-  }
-
-  .register-container > .content > .section-info > .back-link {
-    justify-content: right;
-    margin-top: 20px;
-  }
-
-  .register-container > .content > form {
-    margin-top: 20px;
   }
 }

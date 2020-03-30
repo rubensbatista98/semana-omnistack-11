@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
+
+import PageContainer from "../../components/PageContainer";
+import ActionLink from "../../components/ActionLink";
 
 import api from "../../services/api";
 
@@ -30,7 +33,7 @@ const Logon = () => {
   }
 
   return (
-    <div className="logon-container">
+    <PageContainer className="-logon">
       <section className="form-section">
         <img src={logoImage} alt="Be The Hero" />
 
@@ -49,15 +52,15 @@ const Logon = () => {
             Entrar
           </button>
 
-          <Link to="/register" className="back-link">
+          <ActionLink to="/register">
             <FiLogIn size="16" color="#e02041" />
             Não tenho cadastro
-          </Link>
+          </ActionLink>
         </form>
       </section>
 
       <img src={heroesImage} alt="Heróis" />
-    </div>
+    </PageContainer>
   );
 };
 

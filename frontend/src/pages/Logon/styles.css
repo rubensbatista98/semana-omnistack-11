@@ -1,38 +1,35 @@
-.logon-container {
+.page-container.-logon {
   width: 95%;
-  max-width: 1120px;
-  height: 100vh;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.logon-container > .form-section {
+.-logon > .form-section {
   width: 100%;
   max-width: 350px;
   margin-right: 30px;
 }
 
-.logon-container > .form-section > form {
+.-logon > .form-section > form {
   margin-top: 100px;
 }
 
-.logon-container > .form-section > form > h1 {
+.-logon > .form-section > form > h1 {
   font-size: 32px;
   margin-bottom: 32px;
 }
 
 @media (max-width: 600px) {
-  .logon-container {
+  .page-container.-logon {
     justify-content: center;
     align-items: flex-start;
 
     padding-top: 40px;
   }
 
-  .logon-container > img {
+  .-logon > .form-section {
+    margin: 0;
+  }
+
+  .-logon > img {
     display: none;
   }
 }

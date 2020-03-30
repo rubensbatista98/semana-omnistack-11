@@ -1,0 +1,20 @@
+.action-link {
+  display: flex;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #41414d;
+
+  margin-top: 40px;
+  transition: opacity 200ms;
+}
+
+.action-link svg {
+  margin-right: 8px;
+}
+
+.action-link:hover {
+  opacity: 0.8;
+}
